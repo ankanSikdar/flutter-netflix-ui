@@ -8,7 +8,7 @@ class NavigationScreen extends StatefulWidget {
 
 class _NavigationScreenState extends State<NavigationScreen> {
   final List<Widget> _screens = [
-    HomeScreen(),
+    HomeScreen(key: PageStorageKey('homeScreen')),
     Scaffold(),
     Scaffold(),
     Scaffold(),
@@ -47,7 +47,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
               (title, icon) => MapEntry(
                 title,
                 BottomNavigationBarItem(
-                  icon: Icon(icon),
+                  icon: Icon(
+                    icon,
+                    size: 30.0,
+                  ),
                   label: title,
                 ),
               ),
